@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Naturalization Interview questions Randomized</title>
+  <meta name="copyright" content="Safir S" />
+  <meta name="description" content="United States Citizenship Preparation"/>
+  <meta name="keywords" content="n-400, n400, citizenhip, usics, naturalization test, uscis naturalization"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="DC.title" content="Naturalization Interview questions Randomized"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/custom-css/jumbotron-narrow.css" rel="stylesheet">
+  <link href="/custom-css/social-likes_birman.css" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <div class="container">
+
+        <div class="header">
+          <nav>
+            <ul class="nav nav-pills pull-right">          
+            </ul>          
+          </nav>
+          <h3 class="text-muted">N-400 Citizenship interview questions&nbsp<i><font color='green' size="2px"></i></font></h3>
+        </div>
+
+        <!-- Static navbar -->
+
+        <% if @alert %>
+        <div class="alert alert-<%= @alert['type']%> alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= @alert['message'] %>
+        </div>       
+        <% end %>
+
+        <%= yield %>
+        <footer class="footer" style="padding-right: 0px; padding-left: 0px;">
+          <div class="left" style="min-width: 80%; float: left;">
+            &copy; Based on <a href='http://www.uscis.gov/sites/default/files/USCIS/Office%20of%20Citizenship/Citizenship%20Resource%20Center%20Site/Publications/100q.pdf' target=_blank> this data</a>
+          </div>
+          <div class="right" style="max-width: 20%; float: right;">
+              <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=n400.salihu.info&digit=style/plain/6/&reloads=0" alt="" title="" border="0"></a><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 6px; color: #330010; text-decoration: none; float: right;">Fabbly.com</a>
+          </div>
+        </footer>
+
+
+      </div> <!-- /container -->
+
+
+      <script src="http://www.google.com/jsapi"></script>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="/jquery/jquery-2.1.3.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/bootstrap/js/bootstrap-switch.min.js"></script>
+      <script src="/custom-js/social-likes.min.js"></script>
+      <script type="text/javascript">
+      $(function() {
+        $('.progress').hide();
+        $('#answer').hide();
+        $('#showanswer').hide();
+      //$('#vote').hide();
+      $("[name='notify-me']").bootstrapSwitch();
+      $('[name="notify-me"]').on('switchChange.bootstrapSwitch', function(event, state) {
+  			//	console.log(this); // DOM element
+  			//	console.log(event); // jQuery event
+  			//	console.log(state); // true | false
+        $.ajax({
+          url: '/secure/notify_update',
+          data: {
+            notify: state
+          },
+          error: function() {
+            //$('#info').html('<p>An error has occurred</p>');
+          },
+          dataType: 'jsonp',
+          success: function(data) {
+            // var $title = $('<h1>').text(data.talks[0].talk_title);
+            // var $description = $('<p>').text(data.talks[0].talk_description);
+            // $('#info')
+            // .append($title)
+            // .append($description);
+          },
+          type: 'POST'
+        });          
+      });
+    });  
+</script>   
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=10791841; 
+var sc_invisible=1; 
+var sc_security="532da178"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="shopify
+analytics ecommerce" href="http://statcounter.com/shopify/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/10791841/0/532da178/1/"
+alt="shopify analytics ecommerce"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+<style>
+body{
+  <!-- background-image: url('/images/santa.jpeg'); -->
+}
+</style>
+</html>
